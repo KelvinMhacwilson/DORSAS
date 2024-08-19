@@ -5,6 +5,7 @@ import AuthImage from "@/assets/Auth.jpeg";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const [data, setData] = useState({
@@ -20,11 +21,15 @@ const Register = () => {
     setData((prev) => ({ ...prev, [id]: value }));
   };
 
-  // console.log(data);
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    router.push("/");
+
+    if (data.password !== data.confirmPassword) {
+      toast.error("Passwords do not match");
+      return;
+    }
+    toast.success("Logged In");
+    router.push("/login");
   };
 
   return (
@@ -44,6 +49,7 @@ const Register = () => {
       >
         <p className="text-center text-4xl font-bold">Sign up</p>
         <input
+          required
           id="username"
           onChange={handleChange}
           type="text"
@@ -51,6 +57,7 @@ const Register = () => {
           className="px-2 py-2 rounded-md bg-slate-300 outline-slate-300"
         />
         <input
+          required
           id="password"
           onChange={handleChange}
           type="password"
@@ -58,6 +65,7 @@ const Register = () => {
           placeholder="Password"
         />
         <input
+          required
           id="confirmPassword"
           onChange={handleChange}
           type="password"

@@ -5,6 +5,7 @@ import AuthImage from "@/assets/Auth.jpeg";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const [data, setData] = useState({
@@ -19,9 +20,10 @@ const Login = () => {
     setData((prev) => ({ ...prev, [id]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     router.push("/");
+    toast.success("Logged In");
   };
 
   return (
