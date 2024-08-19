@@ -6,10 +6,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-const Login = () => {
+const Register = () => {
   const [data, setData] = useState({
     username: "",
     password: "",
+    confirmPassword: "",
   });
 
   const router = useRouter();
@@ -19,7 +20,9 @@ const Login = () => {
     setData((prev) => ({ ...prev, [id]: value }));
   };
 
-  const handleSubmit = (e) => {
+  // console.log(data);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     router.push("/");
   };
@@ -39,9 +42,8 @@ const Login = () => {
         onSubmit={handleSubmit}
         className="flex flex-col  md:m-0 gap-5 md:gap-4 p-4  md:p-10 justify-center"
       >
-        <p className="text-center text-4xl font-bold">Log In</p>
+        <p className="text-center text-4xl font-bold">Sign up</p>
         <input
-          required
           id="username"
           onChange={handleChange}
           type="text"
@@ -49,18 +51,24 @@ const Login = () => {
           className="px-2 py-2 rounded-md bg-slate-300 outline-slate-300"
         />
         <input
-          required
           id="password"
           onChange={handleChange}
           type="password"
           className="px-2 py-2 rounded-md bg-slate-300 outline-slate-300"
           placeholder="Password"
         />
+        <input
+          id="confirmPassword"
+          onChange={handleChange}
+          type="password"
+          className="px-2 py-2 rounded-md bg-slate-300 outline-slate-300"
+          placeholder="Confirm Password"
+        />
         <button className="bg-[#AB646C] py-2 text-white">Sign Up</button>
         <p className="text-right">
-          Don{""}t have an account{"?"}{" "}
-          <Link className=" text-blue-700" href={"/register"}>
-            Sign up
+          Already have an account{"?"}{" "}
+          <Link className=" text-blue-700" href={"/login"}>
+            Sign In{" "}
           </Link>
         </p>
       </form>
@@ -68,4 +76,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
