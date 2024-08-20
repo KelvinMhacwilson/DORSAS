@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 import { FaStar } from "react-icons/fa";
 
 interface DestinationCardProps {
-  image: string;
+  image: StaticImageData;
   location: string;
 }
 
