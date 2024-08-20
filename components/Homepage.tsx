@@ -121,7 +121,7 @@ const Homepage = () => {
               src={Resorts}
               alt="Cities"
             />
-            <p className="absolute w-full text-center text-white  bottom-10 text-2xl ">
+            <p className="absolute w-full text-center text-slate-800 bottom-10 text-2xl ">
               Resorts
             </p>
           </div>
@@ -240,7 +240,7 @@ const Homepage = () => {
               <p className="text-slate-600">
                 One of the best agencies to book your travels and tours. Very
                 patient and friendly tour guides. You should book your tours
-                here and I guarantee you{"'"}ll have a goog time.
+                here and I guarantee you{"'"}ll have a good time.
               </p>
             </div>
           </div>
