@@ -14,22 +14,48 @@ import ServiceTour from "@/assets/ServicesTours.png";
 import ServiceAccommodation from "@/assets/ServicesAccomodation.jpeg";
 import Destination1 from "@/assets/Destination1.png";
 import Destination2 from "@/assets/Destination2.jpeg";
-import Destination3 from "@/assets/Destination3.png";
+import Destination3 from "@/assets/Destination3.jpeg";
 import Destination4 from "@/assets/Destination4.jpeg";
-import Destination5 from "@/assets/Destination5.png";
+import Destination5 from "@/assets/Destination5.jpeg";
 import Destination6 from "@/assets/Destination6.jpeg";
 import { FaQuoteLeft } from "react-icons/fa";
 import Review from "@/assets/Review.jpeg";
 import Footer from "./Footer";
+import DestinationCard from "./DestinationCard";
 
 const Homepage = () => {
+  const popularDestinations = [
+    {
+      location: "Paris, France",
+      image: Destination1,
+    },
+    {
+      location: "London, England",
+      image: Destination2,
+    },
+    {
+      location: "Santorini, Greece",
+      image: Destination3,
+    },
+    {
+      location: "Rome, Italy",
+      image: Destination4,
+    },
+    {
+      location: "New York, USA",
+      image: Destination5,
+    },
+    {
+      location: "Tokyo, Japan",
+      image: Destination6,
+    },
+  ];
+
   return (
     <div className="flex flex-col gap-10 w-full">
       <div className="relative">
         <div className="w-full relative h-[622px]  ">
           <Image
-            // width={100}
-            // height={400}
             fill
             src={HomepageImage}
             alt="Homepage Image"
@@ -181,6 +207,18 @@ const Homepage = () => {
       <div className="p-10">
         <p className="text-center">The Best</p>
         <p className="text-center text-3xl font-bold ">Popular Destinations</p>
+
+        <div className="max-w-[970px]  w-full flex mx-auto  items-center justify-center">
+          <div className="grid md:grid-cols-3 mt-7 gap-10">
+            {popularDestinations.map(({ image, location }) => (
+              <DestinationCard
+                key={location}
+                image={image}
+                location={location}
+              />
+            ))}
+          </div>
+        </div>
       </div>
 
       <div className="p-10">

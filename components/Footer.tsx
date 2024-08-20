@@ -5,14 +5,14 @@ import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div className="bg-[#F4F4F4] py-10">
+    <div className="bg-[#F4F4F4] py-10 ">
       <div className="flex items-center justify-center gap-4 border-b pb-2 border-slate-400">
         <Link href="/destinations">Destinations</Link>
         <Link href="/about">About Us</Link>
         <Link href="/">Privacy Policy</Link>
       </div>
 
-      <div className="p-5 flex justify-between">
+      <div className="p-5 flex justify-between flex-wrap gap-8">
         <div>
           <p className="font-bold">Contact us</p>
           <p>
