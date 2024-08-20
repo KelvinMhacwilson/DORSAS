@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="flex items-center justify-center gap-4 border-b pb-2 border-slate-400">
         <Link href="/destinations">Destinations</Link>
         <Link href="/about">About Us</Link>
-        <Link href="/">Privacy Policy</Link>
+        <Link href="/booking">Booking</Link>
       </div>
 
       <div className="p-5 flex justify-between flex-wrap gap-8">

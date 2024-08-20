@@ -208,7 +208,7 @@ const Homepage = () => {
         <p className="text-center">The Best</p>
         <p className="text-center text-3xl font-bold ">Popular Destinations</p>
 
-        <div className="max-w-[970px]  w-full flex mx-auto  items-center justify-center">
+        <div className="max-w-[970px]  w-full md:flex md:mx-auto  md:items-center md:justify-center">
           <div className="grid md:grid-cols-3 mt-7 gap-10">
             {popularDestinations.map(({ image, location }) => (
               <DestinationCard

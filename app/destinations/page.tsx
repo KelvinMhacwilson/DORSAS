@@ -1,6 +1,7 @@
 import Image from "next/image";
 import HomepageImage from "@/assets/Homepage.jpeg";
 import Logo from "@/assets/Logo.jpeg";
+import Footer from "@/components/Footer";
 
 const Destinations = () => {
   return (
@@ -39,6 +40,7 @@ const Destinations = () => {
       </div>
 
       <div></div>
+      <Footer />
     </div>
   );
 };
